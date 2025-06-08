@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .container{
     width: 350px;
     height: 375px;
@@ -9,12 +15,12 @@
 
 }
 
-#body{
+#body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
     background-image: linear-gradient(to bottom right, #55D7E5, #9E00E9);
 }
 
@@ -58,6 +64,7 @@
 #user-input::placeholder{
     color: #000000;
     opacity: 0.5;
+
 }
 #user-input:focus::placeholder{
     color: transparent;
@@ -112,6 +119,7 @@ label{
 }
 #pass-input:focus::placeholder{
     color: transparent;
+    font-size-adjust: 5px;
 }
 #pass-input:focus + label{
     top: -20px;
@@ -130,7 +138,7 @@ label{
 /* PASSWORD INPUT CSS END */
 
 
-.sub-btn{
+/* .sub-btn{
     width: 340px;
     height: 50px;
     margin-top: 50px;
@@ -144,4 +152,80 @@ label{
     display: block;
     margin-left: auto;
     margin-right: auto;
+} */
+
+.sub-btn span{
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    translate: 10px -50%;
+    opacity: 0;
+    font-size: 1.2rem;
+}
+
+.sub-btn button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.sub-btn:hover button{
+    translate: 20px 0;
+}
+
+.sub-btn:hover span {
+    opacity: 1;
+    translate: 20px -50%;
+}
+
+.sub-btn:is(span, button) {
+        width: 340px;
+    height: 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: none;
+    background-image: linear-gradient(to bottom right, #55D7E5, #9E00E9);
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sub-btn:is(span, button):hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    transition: all 0.3s ease-in-out;
+
+}
+
+
+
+.sub-btn:is(span, button):active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: all 0.1s ease-in-out;
+}
+.sub-btn:is(span, button):focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(85, 215, 229, 0.5);
+    transition: all 0.3s ease-in-out;
 }
